@@ -14,4 +14,7 @@ node {
     stage('Test') {
         sh "${mvnHome}/bin/mvn -B test"
     }
+    stage('Deployment') {
+        sh 'chmod +x ./bin/deploy && ./bin/deploy development'
+    }
 }
