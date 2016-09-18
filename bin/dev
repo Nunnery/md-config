@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mvn clean install
+java -jar target/md-config.jar server config/configuration-development.yml
