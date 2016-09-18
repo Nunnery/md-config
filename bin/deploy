@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # Run this script to deploy the app to Heroku.
 
 set -e

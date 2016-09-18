@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 mvn install
 java -jar target/md-config.jar server config/config-development.yml

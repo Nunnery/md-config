@@ -1,12 +1,11 @@
-#!/usr/bin/env bash
-
-if heroku join --app md-config-staging &> /dev/null; then
+#!/bin/sh
+if [ heroku join --app md-config-staging &> /dev/null ]; then
   git remote add staging git@heroku.com:md-config-staging.git || true
   printf 'You are a collaborator on the "md-config-staging" Heroku app\n'
 else
   printf 'Ask for access to the "md-config-staging" Heroku app\n'
 fi
-if heroku join --app md-config-production &> /dev/null; then
+if [ heroku join --app md-config-production &> /dev/null ]; then
   git remote add production git@heroku.com:md-config-production.git || true
   printf 'You are a collaborator on the "md-config-production" Heroku app\n'
 else
