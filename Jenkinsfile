@@ -1,8 +1,7 @@
 node {
     def mvnHome
     stage('Checkout from SCM') {
-        println scm.toString()
-        println scm.getBranches().toString()
+        println env.BRANCH_NAME
         checkout scm
     }
     stage('Setup') {
