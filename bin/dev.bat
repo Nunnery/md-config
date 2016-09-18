@@ -21,5 +21,5 @@
 @REM
 
 @ECHO OFF
-call mvn clean install
+call mvn install
 java -jar target\md-config.jar server config\config-development.yml
