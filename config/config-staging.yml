@@ -23,3 +23,8 @@
 server:
   type: default
   rootPath: /api/*
+logging:
+  appenders:
+    - type: console
+    - type: raven
+      dsn: ${SENTRY_DSN}
