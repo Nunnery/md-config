@@ -5,7 +5,7 @@ node {
     }
     stage('Setup') {
         mvnHome = tool 'Maven 3.3.9'
-        sh './bin/setup'
+        sh 'chmod +x ./bin/setup && ./bin/setup'
         sh 'bundle'
     }
     stage('Clean Workspace') {
