@@ -4,7 +4,7 @@
 set -e
 
 branch="$(git symbolic-ref HEAD --short)"
-target="${1:-staging}"
+target="${1:-development}"
 
 git push "$target" "$branch:master"
 heroku restart --remote "$target"
