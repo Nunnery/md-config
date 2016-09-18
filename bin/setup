@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+heroku git:remote -a md-config-staging
+heroku git:remote -a md-config-production
