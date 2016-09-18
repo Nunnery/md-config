@@ -5,6 +5,7 @@ node {
     }
     stage('Setup Tools') {
         mvnHome = tool 'Maven 3.3.9'
+        sh 'bundle'
     }
     stage('Clean Workspace') {
         sh "${mvnHome}/bin/mvn -B clean"
