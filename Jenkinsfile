@@ -3,8 +3,9 @@ node {
     stage('Checkout from SCM') {
         checkout scm
     }
-    stage('Setup Tools') {
+    stage('Setup') {
         mvnHome = tool 'Maven 3.3.9'
+        sh './bin/setup'
         sh 'bundle'
     }
     stage('Clean Workspace') {
