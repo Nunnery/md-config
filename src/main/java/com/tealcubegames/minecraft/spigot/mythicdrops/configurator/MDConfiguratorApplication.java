@@ -24,6 +24,7 @@ package com.tealcubegames.minecraft.spigot.mythicdrops.configurator;
 import com.tealcubegames.minecraft.spigot.mythicdrops.configurator.health.ChatColorHealthCheck;
 import com.tealcubegames.minecraft.spigot.mythicdrops.configurator.resources.ChatColorResource;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -40,11 +41,12 @@ public class MDConfiguratorApplication extends Application<MDConfiguratorConfigu
 
     @Override
     public void initialize(Bootstrap<MDConfiguratorConfiguration> bootstrap) {
-        // nothing to do yet
+        bootstrap.addBundle(new AssetsBundle("/ui", "/", "index.html"));
     }
 
     @Override
     public void run(MDConfiguratorConfiguration configuration, Environment environment) {
+        environment.jersey().setUrlPattern("/api/*");
         environment.jersey().register(new ChatColorResource());
         environment.healthChecks().register("chatColor", new ChatColorHealthCheck());
     }
