@@ -7,7 +7,7 @@ if heroku join --app md-config-development &> /dev/null; then
   printf 'You are a collaborator on the "md-config-development" Heroku app
 '
 else
-  printf 'Ask for access to the "md-config-staging" Heroku app
+  printf 'Ask for access to the "md-config-development" Heroku app
 '
 fi
 
