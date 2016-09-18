@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
 
-heroku git:remote -a md-config-staging
-heroku git:remote -a md-config-production
+if heroku join --app md-config-staging &> /dev/null; then
+  git remote add staging git@heroku.com:md-config-staging.git || true
+  printf 'You are a collaborator on the "md-config-staging" Heroku app\n'
+else
+  printf 'Ask for access to the "md-config-staging" Heroku app\n'
+fi
+if heroku join --app md-config-production &> /dev/null; then
+  git remote add production git@heroku.com:md-config-production.git || true
+  printf 'You are a collaborator on the "md-config-production" Heroku app\n'
+else
+  printf 'Ask for access to the "md-config-production" Heroku app\n'
+fi
+git config heroku.remote staging
