@@ -25,6 +25,8 @@ import com.tealcubegames.minecraft.spigot.mythicdrops.configurator.health.ChatCo
 import com.tealcubegames.minecraft.spigot.mythicdrops.configurator.resources.ChatColorResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
+import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
+import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -42,6 +44,9 @@ public class MDConfiguratorApplication extends Application<MDConfiguratorConfigu
     @Override
     public void initialize(Bootstrap<MDConfiguratorConfiguration> bootstrap) {
         bootstrap.addBundle(new AssetsBundle("/ui", "/", "index.html"));
+        bootstrap.setConfigurationSourceProvider(
+                new SubstitutingSourceProvider(
+                        bootstrap.getConfigurationSourceProvider(), new EnvironmentVariableSubstitutor(false)));
     }
 
     @Override
