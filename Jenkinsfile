@@ -1,7 +1,7 @@
 node {
     def mvnHome
     stage('Checkout from SCM') {
-        git branch: env.BRANCH_NAME, url: 'https://github.com/Nunnery/md-config.git'
+        git branch: env.BRANCH_NAME, url: 'git@github.com:Nunnery/md-config.git'
     }
     stage('Setup') {
         mvnHome = tool 'Maven 3.3.9'
