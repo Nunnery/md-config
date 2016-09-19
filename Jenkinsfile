@@ -1,14 +1,14 @@
 node {
     def mvnHome
-    stage('Clean Workspace') {
-        deleteDir()
-    }
     stage('Checkout from SCM') {
         git branch: env.BRANCH_NAME, url: 'https://github.com/Nunnery/md-config.git'
     }
     stage('Setup') {
         mvnHome = tool 'Maven 3.3.9'
         sh 'chmod +x ./bin/setup && ./bin/setup'
+    }
+    stage('Clean Workspace') {
+        sh "${mvnHome}/bin/mvn -B clean"
     }
     stage('Test') {
         sh "${mvnHome}/bin/mvn -B test"
