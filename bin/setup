@@ -5,7 +5,7 @@ set -e
 bundle install
 
 if heroku join --app md-config-development &> /dev/null; then
-  git remote add staging git@heroku.com:md-config-development.git || true
+  git remote add development git@heroku.com:md-config-development.git || true
   printf 'You are a collaborator on the "md-config-development" Heroku app
 '
 else
