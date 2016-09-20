@@ -22,11 +22,13 @@ deployment:
   development:
     branch: develop
     commands:
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
       - chmod +x ./bin/deploy
       - ./bin/deploy development
   staging:
     branch: master
     commands:
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
       - chmod +x ./bin/deploy
       - ./bin/deploy staging
 
