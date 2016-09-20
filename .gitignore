@@ -119,3 +119,9 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
