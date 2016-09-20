@@ -43,7 +43,7 @@
   },
   "scripts": {
     "license": "mvn license:check",
-    "test": "grunt karma:unit"
+    "test": "grunt test"
   },
   "pre-commit": [
     "license",
