@@ -164,13 +164,6 @@
             <exclude>/tmp/**</exclude>
           </excludes>
         </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>external.atlassian.jgitflow</groupId>
