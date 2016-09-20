@@ -149,7 +149,10 @@
                         <exclude>**/HEADER</exclude>
                         <exclude>src/test/resources/**</exclude>
                         <exclude>src/main/resources/**</exclude>
-                        <exclude>src/main/frontend/**</exclude>
+                        <exclude>app/**</exclude>
+                        <exclude>dist/**</exclude>
+                        <exclude>node_modules/**</exclude>
+                        <exclude>bower_components/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
