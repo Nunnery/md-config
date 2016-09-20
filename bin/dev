@@ -1,4 +1,4 @@
 #!/bin/sh
 
 mvn install
-java -jar target/md-config.jar server config/config-development.yml
+ENV_CONFIG=config/config-development.yml foreman start -p 4000
