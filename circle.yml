@@ -1,0 +1,31 @@
+machine:
+  ruby:
+    version: 2.3.1
+  java:
+    version: openjdk8
+  node:
+    version: 5.12.0
+dependencies:
+  pre:
+    - chmod +x ./bin/setup
+    - ./bin/setup
+  override:
+    - bundle install
+    - npm install
+    - bower install
+    - mvn dependency:resolve
+test:
+  override:
+    - mvn test
+deployment:
+  development:
+    branch: develop
+    commands:
+      - chmod +x ./bin/deploy
+      - ./bin/deploy development
+  staging:
+    branch: master
+    commands:
+      - chmod +x ./bin/deploy
+      - ./bin/deploy staging
+
