@@ -1,0 +1,12 @@
+version: '2'
+services:
+    mdconfig-postgresql:
+        container_name: mdconfig-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/mdconfig/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=mdconfig
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
